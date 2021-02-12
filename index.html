@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sesión</title>
+    <title>Hobbies</title>
     <!-- Carga el núcleo de Firebase JS SDK -->
     <script
       src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
@@ -29,7 +29,7 @@
       <h1>Sesión</h1>
       <button id=terminarSesión type="button">Terminar Sesión</button>
     </header>
-    <figure><img id=avatar src="" alt=Avatar></figure>
+    <figure><img id=IPN src="" alt=IPN></figure>
     <p>
       <label>
         Email
@@ -62,7 +62,7 @@
           miNav.protege(usuarioAutorizado.privilegios);
           email.value = usuarioAutorizado.email;
           nombre.value = usuarioAutorizado.nombre;
-          avatar.src = usuarioAutorizado.urlFoto;
+          IPN.src = usuarioAutorizado.urlFoto;
         } catch (error) {
           muestraError(error)
         }

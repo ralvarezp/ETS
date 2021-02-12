@@ -24,8 +24,8 @@ export class DaoUsuarios {
       const data = doc.data();
       return new InfoUsuario({
         email: doc.id,
-        avatar: null,
-        urlDeAvatar: await this._daoStorage.url(doc.id),
+        IPN: null,
+        urlDeIPN: await this._daoStorage.url(doc.id),
         pasatiempo: await this._daoPasatiempos.busca(data.PAS_ID),
         privilegios: await this._daoPrivilegios.buscaMuchos(data.PRIV_IDS)
       });
@@ -60,8 +60,8 @@ export class DaoUsuarios {
       PAS_ID: modelo.pasatiempo ? (modelo.pasatiempo.id || null) : "",
       PRIV_IDS: modelo.privilegios.map(p => p.nombre)
     });
-    if (modelo.avatar && modelo.avatar.size > 0) {
-      await this._daoStorage.sube(modelo.email, modelo.avatar);
+    if (modelo.IPN && modelo.IPN.size > 0) {
+      await this._daoStorage.sube(modelo.email, modelo.IPN);
     }
   }
   /** @param {InfoUsuario} modelo
